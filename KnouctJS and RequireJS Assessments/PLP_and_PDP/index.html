@@ -1,0 +1,154 @@
+<html>
+    <head>
+        <script src="require.js"></script>
+        <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.min.css"/> 
+        <script type="text/javascript">
+        require.config({
+            paths: {
+                "jquery": "https://ajax.googleapis.com/ajax/libs/jquery/1.8.1/jquery.min",
+                "datatables":"https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min"
+            },
+            waitSeconds: 15
+        });
+        </script>
+
+        <script type="text/javascript">
+        require( ["jquery","datatables"],
+            function ($) {                 
+                 
+               $('#example').DataTable();
+
+               $('.minus').click(function(){
+                    quantityField = $(this).next();
+                    if (quantityField.val() != 0) {
+                        quantityField.val(parseInt(quantityField.val(), 3) - 1);
+                    }
+                });
+
+                $('.plus').click(function(){
+                    quantityField = $(this).prev();
+                    quantityField.val(parseInt(quantityField.val(), 3) + 1);
+                });              
+                        
+            }     
+            
+        );
+        </script>
+    </head>
+    <body>
+        <h1>Category Cables</h1>
+        <table id="example" class="display" style="width:100%">
+            <thead>
+                <tr>
+                    <th></th>
+                    <th></th>
+                    <th></th> 
+                    <th></th>
+                    <th></th>
+                    <th></th>                    
+                </tr>
+            </thead>
+            <tbody id="response">
+                <tr>
+                    <td><a href="pdp.html" target="_blank"><img  width='150px' height='150px'  src='images/img1.jpeg'></img></a></td>
+                    <td><h3>Product 1</h3><h3>SKU 1000</h3><input type="checkbox" /><label>compare <a href="">+ add to wishlist</a>t</label></td>
+                    <td> 
+                        <input type="button" value="-" class="minus" id="min">
+                        <input name="qty" id="quantity" type="text" value="1000" class="qty">
+                        <input type="button" value="+" class="plus" id="plus">
+                    </td>
+                    <td><span style="color:red;">$0.30/ft</span></td>
+                    <td><span style="color:blue;">$130/1000</span></td>
+                    <td><button style="background-color:blue;color:white">Deliver</button><button>Pickup</button></td>
+                </tr>
+                <tr>
+                    <td><a href="pdp.html" target="_blank"><img  width='150px' height='150px'  src='images/img2.jpeg'></img></a></td>
+                    <td><h3>Product 2</h3><h3>SKU 1001</h3><input type="checkbox" /><label>compare <a href="">+ add to wishlist</a>t</label></td>
+                    <td> 
+                        <input type="button" value="-" class="minus" id="min">
+                        <input name="qty" id="quantity" type="text" value="1000" class="qty">
+                        <input type="button" value="+" class="plus" id="plus">
+                    </td>
+                    <td><span style="color:red;">$0.50/ft</span></td>
+                    <td><span style="color:blue;">$500/1000</span></td>
+                    <td><button style="background-color:blue;color:white">Deliver</button><button>Pickup</button></td>
+                </tr>
+                <tr>
+                    <td><a href="pdp.html" target="_blank"><img  width='150px' height='150px'  src='images/img3.jpeg'></img></a></td>
+                    <td><h3>Product 4</h3><h3>SKU 1002</h3><input type="checkbox" /><label>compare <a href="">+ add to wishlist</a>t</label></td>
+                    <td> 
+                        <input type="button" value="-" class="minus" id="min">
+                        <input name="qty" id="quantity" type="text" value="1000" class="qty">
+                        <input type="button" value="+" class="plus" id="plus">
+                    </td>
+                    <td><span style="color:red;">$0.40/ft</span></td>
+                    <td><span style="color:blue;">$400/1000</span></td>
+                    <td><button style="background-color:blue;color:white">Deliver</button><button>Pickup</button></td>
+                </tr>
+                <tr>
+                    <td><a href="pdp.html" target="_blank"><img  width='150px' height='150px'  src='images/img4.jpeg'></img></a></td>
+                    <td><h3>Product 4</h3><h3>SKU 1003</h3><input type="checkbox" /><label>compare <a href="">+ add to wishlist</a>t</label></td>
+                    <td> 
+                        <input type="button" value="-" class="minus" id="min">
+                        <input name="qty" id="quantity" type="text" value="1000" class="qty">
+                        <input type="button" value="+" class="plus" id="plus">
+                    </td>
+                    <td><span style="color:red;">$0.15/ft</span></td>
+                    <td><span style="color:blue;">$150/1000</span></td>
+                    <td><button style="background-color:blue;color:white">Deliver</button><button>Pickup</button></td>
+                </tr>
+                <tr>
+                    <td><a href="pdp.html" target="_blank"><img  width='150px' height='150px'  src='images/img5.jpeg'></img></a></td>
+                    <td><h3>Product 5</h3><h3>SKU 1004</h3><input type="checkbox" /><label>compare <a href="">+ add to wishlist</a>t</label></td>
+                    <td> 
+                        <input type="button" value="-" class="minus" id="min">
+                        <input name="qty" id="quantity" type="text" value="1000" class="qty">
+                        <input type="button" value="+" class="plus" id="plus">
+                    </td>
+                    <td><span style="color:red;">$0.60/ft</span></td>
+                    <td><span style="color:blue;">$600/1000</span></td>
+                    <td><button style="background-color:blue;color:white">Deliver</button><button>Pickup</button></td>
+                </tr>
+                <tr>
+                    <td><a href="pdp.html" target="_blank"><img  width='150px' height='150px'  src='images/img6.jpeg'></img></a></td>
+                    <td><h3>Product 6</h3><h3>SKU 1005</h3><input type="checkbox" /><label>compare <a href="">+ add to wishlist</a>t</label></td>
+                    <td> 
+                        <input type="button" value="-" class="minus" id="min">
+                        <input name="qty" id="quantity" type="text" value="1000" class="qty">
+                        <input type="button" value="+" class="plus" id="plus">
+                    </td>
+                    <td><span style="color:red;">$0.70/ft</span></td>
+                    <td><span style="color:blue;">$700/1000</span></td>
+                    <td><button style="background-color:blue;color:white">Deliver</button><button>Pickup</button></td>
+                </tr>
+                <tr>
+                    <td><a href="pdp.html" target="_blank"><img  width='150px' height='150px'  src='images/img7.jpeg'></img></a></td>
+                    <td><h3>Product 7</h3><h3>SKU 1006</h3><input type="checkbox" /><label>compare <a href="">+ add to wishlist</a>t</label></td>
+                    <td> 
+                        <input type="button" value="-" class="minus" id="min">
+                        <input name="qty" id="quantity" type="text" value="1000" class="qty">
+                        <input type="button" value="+" class="plus" id="plus">
+                    </td>
+                    <td><span style="color:red;">$0.80/ft</span></td>
+                    <td><span style="color:blue;">$800/1000</span></td>
+                    <td><button style="background-color:blue;color:white">Deliver</button><button>Pickup</button></td>
+                </tr>
+                <tr>
+                    <td><a href="pdp.html" target="_blank"><img  width='150px' height='150px'  src='images/img8.jpeg'></img></a></td>
+                    <td><h3>Product 8</h3><h3>SKU 1007</h3><input type="checkbox" /><label>compare <a href="">+ add to wishlist</a>t</label></td>
+                    <td> 
+                        <input type="button" value="-" class="minus" id="min">
+                        <input name="qty" id="quantity" type="text" value="1000" class="qty">
+                        <input type="button" value="+" class="plus" id="plus">
+                    </td>
+                    <td><span style="color:red;">$0.60/ft</span></td>
+                    <td><span style="color:blue;">$600/1000</span></td>
+                    <td><button style="background-color:blue;color:white">Deliver</button><button>Pickup</button></td>
+                </tr>
+                
+  
+                
+            </tbody>
+        </table>
+    </body>
+</html>

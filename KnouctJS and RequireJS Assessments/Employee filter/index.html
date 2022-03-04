@@ -1,0 +1,132 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Employee</title>
+        <!-- Datatable CSS -->
+        <link rel="stylesheet" id="font-awesome-style-css" href="http://phpflow.com/code/css/bootstrap3.min.css" type="text/css" media="all">
+    <script type="text/javascript" charset="utf8" src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.11.1.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.9/css/jquery.dataTables.min.css"/>      
+    <script type="text/javascript" src="https://cdn.datatables.net/1.10.9/js/jquery.dataTables.min.js"></script>
+
+
+    </head>
+    <body >
+
+        <div >
+            <!-- Custom Filter -->
+            <table>
+                <tr>                    
+                    <td>
+                        <select id="searchByAge" name="searchByAge">
+                            <option value="">Choose Age</option>
+                            <option value="20-30">20-30</option>
+                            <option value="30-40">30-40</option>
+                            <option value="40-50">40-50</option>
+                            <option value="50-60">50-60</option>
+                        </select>
+                    </td><br> 
+                    <td>
+                        <select id="searchBySalary" name="searchBySalary">
+                            <option value="">Choose Salary</option>
+                            <option value="21000-30000">21000-30000</option>
+                            <option value="31000-40000">31000-40000</option>
+                            <option value="41000-50000">41000-50000</option>                            
+                        </select>
+                    </td>                  
+
+                </tr>
+                
+            </table>
+            <br>
+            
+            <!-- Table -->
+            <table id='empTable' class='display dataTable'>
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Name</th>
+                        <th>Age</th>
+                        <th>Office</th>
+                        <th>Joining Date</th>
+                        <th>Salary</th>
+                        <th>Email</th>
+                        <th>Phone Number</th>
+                        <th>City</th>
+                        <th>Country</th>
+                        <th>Zip Code</th>                        
+                    </tr>
+                </thead>        
+                
+                
+            </table>
+        </div>
+        
+        <!-- Script -->
+        <script>
+        $(document).ready(function(){
+
+            var arr = [];
+
+            var dataTable = $('#empTable').DataTable({
+                'processing': true,
+                'serverSide': true,
+                'serverMethod': 'post',
+                'ajax': {
+                    'url':'ajax.php',
+                    'data': function(data){
+
+                  
+                        var age = $('#searchByAge').val();
+                        var salary = $('#searchBySalary').val();
+
+                        // Append to data
+                        data.searchByAge = age;
+                        data.searchBySalary = salary;
+
+                        console.log(data);
+                        
+                        
+                    }
+                },
+                'columns': [
+                    { data: 'Id' },
+                    { data: 'Name' },
+                    { data: 'Age' },
+                    { data: 'Office' },
+                    { data: 'Joined_Date' },
+                    { data: 'Salary' },
+                    { data: 'Email' },
+                    { data: 'Phone_Number' },
+                    { data: 'City' },
+                    { data: 'Country' },
+                    { data: 'Zip' }
+                ]
+            });
+
+
+            $('#searchByAge').change(function(){
+                dataTable.draw();
+            });
+
+            $('#searchBySalary').change(function(){
+                dataTable.draw();
+            });
+
+
+
+
+            $('input[name="filterStatus"]'). change(function() {
+                var arr = [];
+                $("input[name='filterStatus']").each(function () {
+                    if ($(this).is(":checked")) { arr.push( $(this).val()); }
+                });
+                dataTable.draw();
+             });
+
+        
+        });
+        </script>
+    </body>
+
+</html>
+

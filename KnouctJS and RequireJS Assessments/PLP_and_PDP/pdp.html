@@ -1,0 +1,219 @@
+<html>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            let searchParams = new URLSearchParams(window.location.search);
+            let idval = searchParams.get('id');
+            $('#'+idval).css('display','block');
+
+            $('.minus').click(function(){
+                    quantityField = $(this).next();
+                    if (quantityField.val() != 0) {
+                        quantityField.val(parseInt(quantityField.val(), 3) - 1);
+                    }
+                });
+
+            $('.plus').click(function(){
+                quantityField = $(this).prev();
+                quantityField.val(parseInt(quantityField.val(), 3) + 1);
+            });
+        });
+    </script>
+
+    <div id="img1" style="display:none">
+        <img  width='150px' height='150px'  src='images/img1.jpeg' ></img>
+        <h3>Product 1</h3>
+        <span>SKU 1000</span>
+        <p>
+            The NF Series of connectors is based on the modern MIL-DTL-28876 standard for 
+            fiber optic connectors. M28876 connectors were designed for use in fiber optic 
+            shipboard applications by the U.S. Navy. Milnec meets that requirement for performance
+             and durability with the NF Series. Connectors are available in four shell sizes with 
+             five contact arrangements. Contacts feature low insertion loss (-0.35dB typ MM, 
+             -0.35dB typ SM) and are compatible with single or multimode termini. Available 
+             backshells offer environmental protection and are field serviceable in accordance 
+             with MIL-STD-2042.</p>
+        <input type="button" value="-" class="minus" id="min">
+        <input name="qty" id="quantity" type="text" value="1000" class="qty">
+        <input type="button" value="+" class="plus" id="plus">
+         &nbsp;&nbsp;
+        <span style="color:red;">$.30/ft</span>
+        &nbsp;&nbsp;
+        <span style="color:blue;">$130/1000</span>
+        &nbsp;&nbsp;
+        <button style="background-color:blue;color:white">Deliver</button><button>Pickup</button>
+    </div>
+
+    <div id="img2" style="display:none">
+        <img  width='150px' height='150px'  src='images/img2.jpeg' ></img>
+        <h3>Product 2</h3>
+        <span>SKU 1001</span>
+        <p>
+            The NF Series of connectors is based on the modern MIL-DTL-28876 standard for 
+            fiber optic connectors. M28876 connectors were designed for use in fiber optic 
+            shipboard applications by the U.S. Navy. Milnec meets that requirement for performance
+             and durability with the NF Series. Connectors are available in four shell sizes with 
+             five contact arrangements. Contacts feature low insertion loss (-0.35dB typ MM, 
+             -0.35dB typ SM) and are compatible with single or multimode termini. Available 
+             backshells offer environmental protection and are field serviceable in accordance 
+             with MIL-STD-2042.</p>
+        <input type="button" value="-" class="minus" id="min">
+        <input name="qty" id="quantity" type="text" value="1000" class="qty">
+        <input type="button" value="+" class="plus" id="plus">
+         &nbsp;&nbsp;
+        <span style="color:red;">$0.50/ft</span>
+        &nbsp;&nbsp;
+        <span style="color:blue;">$500/1000</span>
+        &nbsp;&nbsp;
+        <button style="background-color:blue;color:white">Deliver</button><button>Pickup</button>
+    </div>
+
+    <div id="img3" style="display:none">
+        <img  width='150px' height='150px'  src='images/img3.jpeg' ></img>
+        <h3>Product 3</h3>
+        <span>SKU 1002</span>
+        <p>
+            The NF Series of connectors is based on the modern MIL-DTL-28876 standard for 
+            fiber optic connectors. M28876 connectors were designed for use in fiber optic 
+            shipboard applications by the U.S. Navy. Milnec meets that requirement for performance
+             and durability with the NF Series. Connectors are available in four shell sizes with 
+             five contact arrangements. Contacts feature low insertion loss (-0.35dB typ MM, 
+             -0.35dB typ SM) and are compatible with single or multimode termini. Available 
+             backshells offer environmental protection and are field serviceable in accordance 
+             with MIL-STD-2042.</p>
+        <input type="button" value="-" class="minus" id="min">
+        <input name="qty" id="quantity" type="text" value="1000" class="qty">
+        <input type="button" value="+" class="plus" id="plus">
+         &nbsp;&nbsp;
+        <span style="color:red;">$0.40/ft</span>
+        &nbsp;&nbsp;
+        <span style="color:blue;">$400/1000</span>
+        &nbsp;&nbsp;
+        <button style="background-color:blue;color:white">Deliver</button><button>Pickup</button>
+    </div>
+
+    <div id="img4" style="display:none">
+        <img  width='150px' height='150px'  src='images/img4.jpeg' ></img>
+        <h3>Product 4</h3>
+        <span>SKU 1003</span>
+        <p>
+            The NF Series of connectors is based on the modern MIL-DTL-28876 standard for 
+            fiber optic connectors. M28876 connectors were designed for use in fiber optic 
+            shipboard applications by the U.S. Navy. Milnec meets that requirement for performance
+             and durability with the NF Series. Connectors are available in four shell sizes with 
+             five contact arrangements. Contacts feature low insertion loss (-0.35dB typ MM, 
+             -0.35dB typ SM) and are compatible with single or multimode termini. Available 
+             backshells offer environmental protection and are field serviceable in accordance 
+             with MIL-STD-2042.</p>
+        <input type="button" value="-" class="minus" id="min">
+        <input name="qty" id="quantity" type="text" value="1000" class="qty">
+        <input type="button" value="+" class="plus" id="plus">
+         &nbsp;&nbsp;
+        <span style="color:red;">$0.15/ft</span>
+        &nbsp;&nbsp;
+        <span style="color:blue;">$150/1000</span>
+        &nbsp;&nbsp;
+        <button style="background-color:blue;color:white">Deliver</button><button>Pickup</button>
+    </div>
+
+    <div id="img5" style="display:none">
+        <img  width='150px' height='150px'  src='images/img5.jpeg' ></img>
+        <h3>Product 5</h3>
+        <span>SKU 1004</span>
+        <p>
+            The NF Series of connectors is based on the modern MIL-DTL-28876 standard for 
+            fiber optic connectors. M28876 connectors were designed for use in fiber optic 
+            shipboard applications by the U.S. Navy. Milnec meets that requirement for performance
+             and durability with the NF Series. Connectors are available in four shell sizes with 
+             five contact arrangements. Contacts feature low insertion loss (-0.35dB typ MM, 
+             -0.35dB typ SM) and are compatible with single or multimode termini. Available 
+             backshells offer environmental protection and are field serviceable in accordance 
+             with MIL-STD-2042.</p>
+        <input type="button" value="-" class="minus" id="min">
+        <input name="qty" id="quantity" type="text" value="1000" class="qty">
+        <input type="button" value="+" class="plus" id="plus">
+         &nbsp;&nbsp;
+        <span style="color:red;">$0.60/ft</span>
+        &nbsp;&nbsp;
+        <span style="color:blue;">$600/1000</span>
+        &nbsp;&nbsp;
+        <button style="background-color:blue;color:white">Deliver</button><button>Pickup</button>
+    </div>
+
+
+    <div id="img6" style="display:none">
+        <img  width='150px' height='150px'  src='images/img6.jpeg' ></img>
+        <h3>Product 6</h3>
+        <span>SKU 1005</span>
+        <p>
+            The NF Series of connectors is based on the modern MIL-DTL-28876 standard for 
+            fiber optic connectors. M28876 connectors were designed for use in fiber optic 
+            shipboard applications by the U.S. Navy. Milnec meets that requirement for performance
+             and durability with the NF Series. Connectors are available in four shell sizes with 
+             five contact arrangements. Contacts feature low insertion loss (-0.35dB typ MM, 
+             -0.35dB typ SM) and are compatible with single or multimode termini. Available 
+             backshells offer environmental protection and are field serviceable in accordance 
+             with MIL-STD-2042.</p>
+        <input type="button" value="-" class="minus" id="min">
+        <input name="qty" id="quantity" type="text" value="1000" class="qty">
+        <input type="button" value="+" class="plus" id="plus">
+         &nbsp;&nbsp;
+        <span style="color:red;">$0.70/ft</span>
+        &nbsp;&nbsp;
+        <span style="color:blue;">$700/1000</span>
+        &nbsp;&nbsp;
+        <button style="background-color:blue;color:white">Deliver</button><button>Pickup</button>
+
+    </div>
+    <div id="img7" style="display:none">
+        <img  width='150px' height='150px'  src='images/img7.jpeg' ></img>
+        <h3>Product 7</h3>
+        <span>SKU 1006</span>
+        <p>
+            The NF Series of connectors is based on the modern MIL-DTL-28876 standard for 
+            fiber optic connectors. M28876 connectors were designed for use in fiber optic 
+            shipboard applications by the U.S. Navy. Milnec meets that requirement for performance
+             and durability with the NF Series. Connectors are available in four shell sizes with 
+             five contact arrangements. Contacts feature low insertion loss (-0.35dB typ MM, 
+             -0.35dB typ SM) and are compatible with single or multimode termini. Available 
+             backshells offer environmental protection and are field serviceable in accordance 
+             with MIL-STD-2042.</p>
+        <input type="button" value="-" class="minus" id="min">
+        <input name="qty" id="quantity" type="text" value="1000" class="qty">
+        <input type="button" value="+" class="plus" id="plus">
+         &nbsp;&nbsp;
+        <span style="color:red;">$0.80/ft</span>
+        &nbsp;&nbsp;
+        <span style="color:blue;">$800/1000</span>
+        &nbsp;&nbsp;
+        <button style="background-color:blue;color:white">Deliver</button><button>Pickup</button>
+    </div>
+
+    <div id="img8" style="display:none">
+        <img  width='150px' height='150px'  src='images/img8.jpeg' ></img>
+        <h3>Product 8</h3>
+        <span>SKU 1007</span>
+        <p>
+            The NF Series of connectors is based on the modern MIL-DTL-28876 standard for 
+            fiber optic connectors. M28876 connectors were designed for use in fiber optic 
+            shipboard applications by the U.S. Navy. Milnec meets that requirement for performance
+             and durability with the NF Series. Connectors are available in four shell sizes with 
+             five contact arrangements. Contacts feature low insertion loss (-0.35dB typ MM, 
+             -0.35dB typ SM) and are compatible with single or multimode termini. Available 
+             backshells offer environmental protection and are field serviceable in accordance 
+             with MIL-STD-2042.</p>
+        <input type="button" value="-" class="minus" id="min">
+        <input name="qty" id="quantity" type="text" value="1000" class="qty">
+        <input type="button" value="+" class="plus" id="plus">
+         &nbsp;&nbsp;
+        <span style="color:red;">$0.60/ft</span>
+        &nbsp;&nbsp;
+        <span style="color:blue;">$600/1000</span>
+        &nbsp;&nbsp;
+        <button style="background-color:blue;color:white">Deliver</button><button>Pickup</button>
+    </div>
+
+    
+
+
+</html>
